@@ -2,12 +2,12 @@ package co.edu.konradlorenz.model;
 import co.edu.konradlorenz.view.*;
 import static co.edu.konradlorenz.view.Ventana.mostrarMensaje;
 
-public class TarjetaDebito extends Cuenta {
+public class tarjetaDebito extends Cuenta {
 
     public TarjetaDebito() {
     }
 
-    public TarjetaDebito(int numeroCuenta, String propietario, double saldo, int numeroTarjeta, String fechaExpiracion,
+    public tarjetaDebito(int numeroCuenta, String propietario, double saldo, int numeroTarjeta, String fechaExpiracion,
             int cvv) {
         super(numeroCuenta, propietario, saldo, numeroTarjeta, fechaExpiracion, cvv);
     }
