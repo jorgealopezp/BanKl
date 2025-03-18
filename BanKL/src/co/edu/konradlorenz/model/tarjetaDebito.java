@@ -1,24 +1,29 @@
 package co.edu.konradlorenz.model;
+import co.edu.konradlorenz.view.*;
+import static co.edu.konradlorenz.view.Ventana.mostrarMensaje;
 
-public class tarjetaDebito extends Cuenta {
+public class TarjetaDebito extends Cuenta {
 
-    public tarjetaDebito() {
+    public TarjetaDebito() {
     }
 
-    public tarjetaDebito(int numeroCuenta, String propietario, double saldo, int numeroTarjeta, String fechaExpiracion,
+    public TarjetaDebito(int numeroCuenta, String propietario, double saldo, int numeroTarjeta, String fechaExpiracion,
             int cvv) {
         super(numeroCuenta, propietario, saldo, numeroTarjeta, fechaExpiracion, cvv);
     }
 
+    @Override
     public void consignar(double valor) {
         if (valor > 0) {
             setSaldo(getSaldo() + valor);
+            mostrarMensaje("Consignación exitosa. Saldo actual: " + getSaldo());
             System.out.println("Consignación exitosa. Saldo actual: " + getSaldo());// hacer con lo de ventana
         } else {
             System.out.println("El valor a consignar debe ser mayor que cero.");// hacer con lo de ventana
         }
     }
 
+    @Override
     public void retirar(double valor) {
         if (valor > 0 && valor <= getSaldo()) {
             setSaldo(getSaldo() - valor);
