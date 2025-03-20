@@ -1,0 +1,26 @@
+package co.edu.konradlorenz.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SeguridadBancaria {
+    private List<Valor> listaValoresCustodiados;
+
+    public SeguridadBancaria() {
+        this.listaValoresCustodiados = new ArrayList<>();
+    }
+
+    public void agregarValor(Valor valor) {
+        if (valor != null) {
+            listaValoresCustodiados.add(valor);
+        }
+    }
+
+    public void retirarValor(int idValor) {
+        listaValoresCustodiados.removeIf(valor -> valor.getId() == idValor);
+    }
+
+    public List<Valor> listarValores() {
+        return new ArrayList<>(listaValoresCustodiados);
+    }
+}

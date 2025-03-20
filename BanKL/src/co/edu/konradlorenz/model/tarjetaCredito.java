@@ -1,15 +1,15 @@
 package co.edu.konradlorenz.model;
 
-public class tarjetaCredito extends Cuenta {
+public class TarjetaCredito extends Cuenta {
     private double limiteCredito;
     private double interes;
     private double deuda;
 
-    public tarjetaCredito() {
+    public TarjetaCredito() {
     }
 
 
-    public tarjetaCredito(int numeroCuenta, String propietario, double saldo, int numeroTarjeta, String fechaExpiracion, int cvv, double limiteCredito, double interes, double deuda) {
+    public TarjetaCredito(int numeroCuenta, String propietario, double saldo, int numeroTarjeta, String fechaExpiracion, int cvv, double limiteCredito, double interes, double deuda) {
         super(numeroCuenta, propietario, saldo, numeroTarjeta, fechaExpiracion, cvv);
         this.limiteCredito = limiteCredito;
         this.interes = interes;

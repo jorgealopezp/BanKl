@@ -5,9 +5,6 @@ import static co.edu.konradlorenz.view.Ventana.mostrarMensaje;
 import java.util.ArrayList;
 import java.util.List;
 
-   import java.util.ArrayList;
-import java.util.List;
-
 class TasaCambio {
     String monedaOrigen;
     String monedaDestino;
@@ -49,10 +46,5 @@ public class CambioDivisas {
         return cantidad * tasa;
     }
 
-    public static void main(String[] args) {
-        CambioDivisas cambio = new CambioDivisas();
 
-        System.out.println("Tasa USD a EUR: " + cambio.consultarTasa("USD", "EUR"));
-        System.out.println("100 USD a EUR: " + cambio.realizarCambio("USD", "EUR", 100));
-    }
 }
