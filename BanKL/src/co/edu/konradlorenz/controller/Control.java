@@ -151,4 +151,3 @@ public class Control {
         objV.mostrarMensaje("\nAlertas - Funcionalidad en desarrollo");
     }
 }
-
