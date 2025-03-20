@@ -4,10 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SeguridadBancaria {
+
     private List<Valor> listaValoresCustodiados;
 
     public SeguridadBancaria() {
         this.listaValoresCustodiados = new ArrayList<>();
+    }
+
+    public SeguridadBancaria(List<Valor> listaValoresCustodiados) {
+        this.listaValoresCustodiados = listaValoresCustodiados;
+    }
+
+    public List<Valor> getListaValoresCustodiados() {
+        return listaValoresCustodiados;
+    }
+
+    public void setListaValoresCustodiados(List<Valor> listaValoresCustodiados) {
+        this.listaValoresCustodiados = listaValoresCustodiados;
     }
 
     public void agregarValor(Valor valor) {
