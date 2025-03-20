@@ -9,8 +9,27 @@ public class EmisionTarjeta {
     private SecureRandom secureRandom;
     private DateTimeFormatter dateTimeFormatter;
 
+    public EmisionTarjeta() {
+    }
+
     public EmisionTarjeta(SecureRandom secureRandom, DateTimeFormatter dateTimeFormatter) {
         this.secureRandom = secureRandom;
+        this.dateTimeFormatter = dateTimeFormatter;
+    }
+
+    public SecureRandom getSecureRandom() {
+        return secureRandom;
+    }
+
+    public void setSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
+    }
+
+    public DateTimeFormatter getDateTimeFormatter() {
+        return dateTimeFormatter;
+    }
+
+    public void setDateTimeFormatter(DateTimeFormatter dateTimeFormatter) {
         this.dateTimeFormatter = dateTimeFormatter;
     }
 
