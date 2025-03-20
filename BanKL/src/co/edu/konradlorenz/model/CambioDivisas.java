@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class TasaCambio {
+
     String monedaOrigen;
     String monedaDestino;
     double tasa;
@@ -18,11 +19,12 @@ class TasaCambio {
 }
 
 public class CambioDivisas {
+
     private List<TasaCambio> tasasCambio;
 
     public CambioDivisas() {
         tasasCambio = new ArrayList<>();
-       
+
         tasasCambio.add(new TasaCambio("USD", "EUR", 0.85));
         tasasCambio.add(new TasaCambio("EUR", "USD", 1.18));
         tasasCambio.add(new TasaCambio("USD", "COP", 4000.0));
@@ -35,7 +37,7 @@ public class CambioDivisas {
                 return tasa.tasa;
             }
         }
-        return -1.0; 
+        return -1.0;
     }
 
     public double realizarCambio(String monedaOrigen, String monedaDestino, double cantidad) {
@@ -45,6 +47,5 @@ public class CambioDivisas {
         }
         return cantidad * tasa;
     }
-
 
 }
