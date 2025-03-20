@@ -1,13 +1,15 @@
 package co.edu.konradlorenz.model;
 
+import co.edu.konradlorenz.view.*;
+
 public class TarjetaCredito extends Cuenta {
+
     private double limiteCredito;
     private double interes;
     private double deuda;
 
     public TarjetaCredito() {
     }
-
 
     public TarjetaCredito(int numeroCuenta, String propietario, double saldo, int numeroTarjeta, String fechaExpiracion, int cvv, double limiteCredito, double interes, double deuda) {
         super(numeroCuenta, propietario, saldo, numeroTarjeta, fechaExpiracion, cvv);
@@ -41,14 +43,19 @@ public class TarjetaCredito extends Cuenta {
     }
 
     @Override
+    public String toString() {
+        return "TarjetaCredito{" + "limiteCredito=" + limiteCredito + ", interes=" + interes + ", deuda=" + deuda + '}';
+    }
+
+    @Override
     public void retirar(double valor) {
         if (valor > 0 && valor <= getSaldo()) {
             setSaldo(getSaldo() - valor);
-            System.out.println("Retiro exitoso. Saldo actual: " + getSaldo());// hacer con lo de ventana
+            Ventana.mostrarMensaje("Retiro exitoso. Saldo actual: " + getSaldo());
         } else if (valor <= 0) {
-            System.out.println("El valor a retirar debe ser mayor que cero.");// hacer con lo de ventana
+            Ventana.mostrarMensaje("El valor a retirar debe ser mayor que cero.");
         } else {
-            System.out.println("No hay suficiente saldo para realizar la operación.");// hacer con lo de ventana
+            Ventana.mostrarMensaje("No hay suficiente saldo para realizar la operación.");
         }
     }
 
@@ -56,11 +63,11 @@ public class TarjetaCredito extends Cuenta {
         if (valor > 0 && valor <= getSaldo()) {
             setSaldo(getSaldo() - valor);
             setDeuda(getDeuda() - valor);
-            System.out.println("Pago de deuda exitoso. Saldo actual: " + getSaldo());// hacer con lo de ventana
+            Ventana.mostrarMensaje("Pago de deuda exitoso. Saldo actual: " + getSaldo());
         } else if (valor <= 0) {
-            System.out.println("El valor a pagar debe ser mayor que cero.");// hacer con lo de ventana
+            Ventana.mostrarMensaje("El valor a pagar debe ser mayor que cero.");
         } else {
-            System.out.println("No hay suficiente saldo para realizar la operación.");// hacer con lo de ventana
+            Ventana.mostrarMensaje("No hay suficiente saldo para realizar la operación.");
         }
     }
 }
